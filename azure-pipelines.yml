@@ -5,5 +5,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
- - script: echo "Website files are ready"
-   displayName: Check website files
+- script: |
+    test -f index.html
+    test -f style.css
+    echo "Website files are ready."
+  displayName: Check website files
+ 
